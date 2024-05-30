@@ -1,0 +1,72 @@
+{
+    "name": "directus-extension-aspm",
+    "description": "Application Security Posture Management module for Directus",
+    "author": "Ivan Elkin",
+    "icon": "extension",
+    "version": "0.0.18",
+    "keywords": [
+        "directus",
+        "directus-extension",
+        "aspm",
+        "application security"
+    ],
+    "type": "module",
+    "directus:extension": {
+        "host": "^10.11.0",
+        "type": "bundle",
+        "path": {
+            "app": "extensions/directus-extension-aspm/app.cjs",
+            "api": "extensions/directus-extension-aspm/api.cjs"
+        },
+        "entries": [
+            {
+                "name": "github-loader",
+                "type": "operation",
+                "source": {
+                    "app": "src/github-loader/app.ts",
+                    "api": "src/github-loader/api.ts"
+                }
+            },
+            {
+                "name": "defect-writer",
+                "type": "operation",
+                "source": {
+                    "app": "src/defect-writer/app.ts",
+                    "api": "src/defect-writer/api.ts"
+                }
+            },
+            {
+                "name": "repository-display",
+                "type": "display",
+                "source": "src/repository-display/index.ts"
+            }
+        ]
+    },
+    "scripts": {
+        "build": "directus-extension build",
+        "dev": "directus-extension build -w --no-minify",
+        "link": "directus-extension link",
+        "snapshot": "npx directus schema snapshot ./database/schema-snapshot.yaml",
+        "snapshot-apply": "npx directus schema apply --yes ./database/schema-snapshot.yaml",
+        "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest --testPathIgnorePatterns ./src/example-loader-template/"
+    },
+    "dependencies": {
+        "@directus/extensions-sdk": "^11.0.4",
+        "@directus/sdk": "^16.0.0",
+        "axios": "^1.6.2",
+        "sass": "^1.69.5",
+        "sass-loader": "^13.3.2",
+        "typescript": "^5.3.2",
+        "vue": "^3.3.9"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^11.0.4",
+        "@types/jest": "^29.5.12",
+        "@types/pg": "^8.11.2",
+        "dotenv": "^16.4.5",
+        "jest": "^29.7.0",
+        "pg": "^8.11.3",
+        "ts-jest": "^29.1.2",
+        "typescript": "^5.3.3"
+    }
+}

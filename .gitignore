@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+.env
+.vscode
+node_modules
+
+# Directus files
+extensions/*
+
+# Allowed files
+!database/schema-snapshot.yaml
+!database/snapshot-apply.sh

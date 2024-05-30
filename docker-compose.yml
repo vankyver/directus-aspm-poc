@@ -1,0 +1,22 @@
+version: "3"
+services:
+#  database:
+#    image: postgis/postgis:13-master
+#    volumes:
+#      - ./data/database:/var/lib/postgresql/data
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      POSTGRES_USER: "${DB_USER}"
+#      POSTGRES_PASSWORD: "${DB_PASSWORD}"
+#      POSTGRES_DB: "${DB_DATABASE}"
+  directus:
+    image: directus/directus:10.11.0
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    env_file:
+      - .env
