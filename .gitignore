@@ -5,7 +5,7 @@
 node_modules
 
 # Directus files
-extensions/*
+#extensions/*
 
 # Allowed files
 !database/schema-snapshot.yaml

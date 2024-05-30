@@ -1,0 +1,60 @@
+{
+    "name": "directus-extension-asmp-bundle",
+    "description": "Application Security Posture Management module for Directus",
+    "icon": "extension",
+    "version": "0.0.18",
+    "keywords": [
+        "directus",
+        "directus-extension",
+        "directus-custom-operation"
+    ],
+    "type": "module",
+    "directus:extension": {
+        "host": "^10.10.4",
+        "type": "bundle",
+        "path": {
+            "app": "app.cjs",
+            "api": "api.cjs"
+        },
+        "entries": [
+            {
+                "name": "github-loader",
+                "type": "operation",
+                "source": {
+                    "app": "src/github-loader/app.ts",
+                    "api": "src/github-loader/api.ts"
+                }
+            },
+            {
+                "name": "defect-writer",
+                "type": "operation",
+                "source": {
+                    "app": "src/defect-writer/app.ts",
+                    "api": "src/defect-writer/api.ts"
+                }
+            },
+            {
+                "name": "repository-display",
+                "type": "display",
+                "source": "src/repository-display/index.ts"
+            }
+        ]
+    },
+    "scripts": {
+        "build": "directus-extension build && cp package.json extensions/directus-extension-aspm/package.json",
+        "dev": "directus-extension build -w --no-minify",
+        "link": "directus-extension link"
+    },
+    "dependencies": {
+        "@directus/extensions-sdk": "^10.2.0",
+        "@directus/sdk": "^13.0.2",
+        "axios": "^1.6.2",
+        "sass": "^1.69.5",
+        "sass-loader": "^13.3.2",
+        "typescript": "^5.3.2",
+        "vue": "^3.3.9"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.3"
+    }
+}

@@ -1,8 +1,8 @@
 # Directus-ASPM-PoC
 
-Provides a set of modules to be used as a PoC for building Application Security Posture Management (ASPM) based on Directus.
+![directus-aspm](./docs/img/defects.png)
 
-Current PoC contains ready to start docker-compose with SQLite database that contains tables and data for the PoC.
+Proof of Concept for building Application Security Posture Management (ASPM) based on [Directus Headless-CMS](https://github.com/directus/directus).
 
 
 ## 🚀 Running
@@ -33,7 +33,12 @@ curl http://127.0.0.1:8055/flows/trigger/e967dffe-912b-4c5b-8265-b8c101e090ac \
 
 #### ⚛️ Nuclei
 ```bash
+nuclei -u http://testphp.vulnweb.com/ -je results.json
 
+curl http://127.0.0.1:8055/flows/trigger/d8612883-7f69-4bcd-af3b-e1e35df6874d \
+--data @results.json -XPOST \
+-H "Authorization: Bearer geBockesPOi-DV71OHf6SbF_EKcMtSz4" \
+-H 'Content-type: application/json'
 ```
 
 

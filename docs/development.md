@@ -2,10 +2,14 @@
 
 Following instructions will guide you through the process of developing Directus extensions.
 
+## Structure
 
-----
+All extension modules are building into one bundle that is used by Directus. 
 
-## Modules
+All development happens in `src` directory.
+After building the bundle, it will be placed in `extensions` directory.
+
+### Modules
 
 **Github-loader** - [operation extension](https://docs.directus.io/extensions/operations.html) that loads information about repositories from Github
 
@@ -13,7 +17,7 @@ Following instructions will guide you through the process of developing Directus
 
 **Repository display** - [display extension](https://docs.directus.io/extensions/displays.html) that shows additional Defect tags in list of repositories
 
-Additionally, scripts used in Directus Flows
+Additionally, scripts used in Directus Flows 
 
 ----
 
