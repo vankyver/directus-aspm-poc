@@ -64,3 +64,12 @@ In current PoC you will need to provide
 ## 🛠️ Development
 
 Details of extensions development can be found in [dev documentation](docs/development.md)
+
+
+-----
+
+## Example preview
+
+![directus-aspm](./docs/img/dashboard.png)
+![directus-aspm](./docs/img/flow.png)
+![directus-aspm](./docs/img/Repository.png)
