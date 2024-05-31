@@ -16,6 +16,14 @@ email: admin@example.com
 password: d1r3ctu5
 ```
 
+## ⚙️ Setup
+
+Make copy of `.env.example` and rename it to `.env`, add necessary credentials and settings.
+In current PoC you will need to provide
+- Github token to be able to load data from Github.
+- Directus admin API key to be able to upload results of security scanners.
+
+
 
 ## Example Running scanners and uploading scan results
 
@@ -40,15 +48,6 @@ curl http://127.0.0.1:8055/flows/trigger/d8612883-7f69-4bcd-af3b-e1e35df6874d \
 -H "Authorization: Bearer geBockesPOi-DV71OHf6SbF_EKcMtSz4" \
 -H 'Content-type: application/json'
 ```
-
-
-## Pre-requirements
-
-Make copy of `.env.example` and rename it to `.env`, add necessary credentials and settings.
-
-In current PoC you will need to provide 
- - Github token to be able to load data from Github.
- - Directus admin API key to be able to upload results of security scanners.
 
 
 
