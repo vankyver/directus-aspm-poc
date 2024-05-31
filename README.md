@@ -49,14 +49,18 @@ curl http://127.0.0.1:8055/flows/trigger/d8612883-7f69-4bcd-af3b-e1e35df6874d \
 -H 'Content-type: application/json'
 ```
 
+#### 🐷 Trufflehog
+```bash
+trufflehog git git@github.com:WebGoat/WebGoat-Legacy.git --json > tf.json
 
-
-
-
-
-
-
-
+while IFS= read -r line; 
+    do curl http://127.0.0.1:8055/flows/trigger/9b47758f-5b3b-4287-8faf-8005759767a9 \
+     --data "$line" \
+     -XPOST \
+     -H "Authorization: Bearer geBockesPOi-DV71OHf6SbF_EKcMtSz4"\
+     -H 'Content-type: application/json';
+ done < tf.json
+```
 
 -----
 
@@ -71,4 +75,4 @@ Details of extensions development can be found in [dev documentation](docs/devel
 
 ![directus-aspm](./docs/img/dashboard.png)
 ![directus-aspm](./docs/img/flow.png)
-![directus-aspm](./docs/img/Repository.png)
+![directus-aspm](./docs/img/repository.png)
